@@ -7,7 +7,7 @@ HOST=qits1.upiq.org
 
 # download qi database backups, exclude BLOBs:
 echo "PULLING: database (ODB, SQL) storages, binary dumps (excluding BLOBs)."
-rsync -avx --exclude "**blobsnapshot.*/" \
+rsync -avx --exclude "**blobsnapshot*/" \
   -e "ssh -C -i /home/qi/.ssh/id_qit2backup_rsa" \
   --numeric-ids qi@$HOST:/home/remotebkp/qi/zodb/ \
   /home/remotebkp/qi/zodb/
